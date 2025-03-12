@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
+  standalone: true,
   selector: 'app-product-list',
-  imports: [],
+  imports: [CommonModule, ProductCardComponent],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -14,13 +17,13 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) {}
 
-  ngOnInit() {
-    this.productService.getProducts().subscribe(data => {
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe((data: Product[]) => {
       this.products = data;
     });
   }
 
-  onSelectProduct(productId: number) {
+  onSelectProduct(productId: number): void {
     this.router.navigate(['/products', productId]);
   }
 }
