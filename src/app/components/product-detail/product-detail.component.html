@@ -1,7 +1,13 @@
-<div *ngIf="product; else notFound">
-  <h2>{{ product.name }}</h2>
-  <p>Price: {{ product.price | currency }}</p>
-  <p>{{ product.description }}</p>
+<div class="detail-container" *ngIf="product; else notFound">
+  <div class="detail-card">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" class="detail-img">
+    <div class="detail-body">
+      <h2>{{ product.name }}</h2>
+      <p class="detail-price">{{ product.price | currency }}</p>
+      <p class="detail-description">{{ product.description }}</p>
+      <button (click)="goBack()" class="detail-back-button">Back to Products</button>
+    </div>
+  </div>
 </div>
 
 <ng-template #notFound>

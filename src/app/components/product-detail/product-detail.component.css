@@ -1,0 +1,51 @@
+.detail-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+.detail-img {
+  width: 100%;
+  height: auto;
+}
+
+.detail-body {
+  padding: 20px;
+}
+
+.detail-price {
+  color: #2ecc71;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.detail-description {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.detail-back-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.detail-back-button:hover {
+  background-color: #2980b9;
+}
